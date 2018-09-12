@@ -1,9 +1,9 @@
 <?php
 
-class NapraviUpit {
+class QueryBilder {
 
   // klasa koja dobija prilikom instanciranja objekat koji sluzi za konekciju i zatim resava upite.
-  
+
   protected $pdo;
 
   public function __construct(PDO $pdo)
@@ -11,16 +11,16 @@ class NapraviUpit {
     $this->pdo = $pdo;
   }
 
-  public function uzmiSve($tabela)
+  public function fetchAll($table)
   {
-    $upit = $this->pdo->prepare('select * from {$tabela}');
+    $query = $this->pdo->prepare("select * from {$table}");
 
-    $upit->execute();
+    $query->execute();
 
-    return $upit->fetchAll(PDO::FETCH_OBJ);
+    return $query->fetchAll(PDO::FETCH_OBJ);
   }
 
-  public function usnimi(string $table, array $podaci)
+  public function save(string $table, array $podaci)
   {
     $str = "INSERT INTO {$table} SET ";
 
@@ -29,10 +29,10 @@ class NapraviUpit {
     }
     $str = rtrim($str, ', ');
 
-    $upit = $this->pdo->prepare($str);
+    $query = $this->pdo->prepare($str);
 
-    $upit->execute();
+    $query->execute();
 
-    header('location: www.nekaadresa.com');
+    header('location: www.someadress.com');
   }
 }

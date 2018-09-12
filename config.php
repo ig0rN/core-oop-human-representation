@@ -1,5 +1,5 @@
 <?php
 
 function __autoload($c){
-	require_once "klase/{$c}.class.php";
+	require_once "classes/{$c}.class.php";
 }
