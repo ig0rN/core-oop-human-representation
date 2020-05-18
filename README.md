@@ -1,5 +1,5 @@
-This is a test for a job.
-I wrote it in Serbian to fulfill the task that was explained in that language.
-As soon as the firm for which I was doing the test check the code, I will make a translation into English.
+# Human representation via OOP
 
-The task was to present a human with classes using the main OOP principles and than show how you will save that human into database.
+This was probably my first OOP test for a job.
+
+Very basic task. I needed to use all fundamental OOP principles.
